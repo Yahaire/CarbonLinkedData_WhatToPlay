@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Carbon LDP & Semana i - Blog Demo</title>
+</head>
+<body>
+	<h2>"What to play" upload script</h2>
+	<p>This page uploads data to the database found in <a href="https://workbench.itesm-01.carbonldp.com/explore">https://workbench.itesm-01.carbonldp.com/</a>.</p>
+	<p>To see the result of the uploads, check the console in the inspector of your browser.</p>
+	<p><b>Note: </b>The script is known to cause problems when used in Internet Explorer and Opera Mini.</p>
+
+	<h3>Mass Upload...</h3>
+	<table>
+		<tr>
+			<th colspan="3">
+				<h4>By document</h4>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="insertDefaultPublishers()" >Publishers</button>
+			</td>
+			<td>
+				<button onclick="insertDefaultGenres()">Genres</button>
+			</td>
+			<td>
+				<button onclick="insertDefaultPlatforms()">Platforms</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="insertDefaultRatings()">Ratings</button>
+			</td>
+			<td>
+				<button onclick="insertDefaultGames()">Games</button>
+			</td>
+		</tr>
+		<tr>
+			<th colspan="3">
+				<h4>All</h4>
+			</th>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: center;">
+				<button onclick="insertAll()">Everything</button>
+			</td>
+		</tr>
+	</table>
+
+	<h3>Add game</h3>
+	<form id="gameForm" onsubmit="return false">
+		<div>
+			<label>Nombre</label>
+			<input id="gameName" type="text">
+		</div>
+		<div>
+			<label>rating</label>
+			<select id="gameRatings">
+				<option value="e">E</option>
+				<option value="e10">E10</option>
+				<option value="t">T</option>
+				<option value="m">M</option>
+			</select>
+		</div>
+		<div>
+			<label>publisher</label>
+			<select  id="gamePublisher">
+				<!-- To be added with js -->
+			</select>
+		</div>
+		<div>
+			<label>genre</label>
+			<select  id="gameGenres">
+				<option value="action">Action</option>
+				<option value="adventure">Adventure</option>
+				<option value="fighting">Fighting</option>
+				<option value="misc">Miscellaneous</option>
+				<option value="platfrom">Platform</option>
+				<option value="puzzle">Puzzle</option>
+				<option value="racing">Racing</option>
+				<option value="role-playing">Role Playing</option>
+				<option value="shooter">Shooter</option>
+				<option value="simulation">Simulation</option>
+				<option value="sports">Sports</option>
+				<option value="strategy">Strategy</option>
+			</select>
+		</div>
+		<div>
+			<label>sales(in millions)</label>
+			<input id="gameSales" type="number" min="0">
+		</div>
+		<div>
+			<label>score(0-100)</label>
+			<input id="gameScore" type="number" min="0" max="100">
+		</div>
+		<div>
+			<label>platforms</label>
+			<select id="gamePlatforms">
+				<!-- To be added with js -->
+			</select>
+		</div>
+
+		<div>
+			<button type="submit" onclick="insertGame()">Add Game</button>
+		</div>
+	</form>
+</html>
